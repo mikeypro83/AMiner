@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<object>
+  <spriteName>&lt;undefined&gt;</spriteName>
+  <solid>0</solid>
+  <visible>-1</visible>
+  <depth>0</depth>
+  <persistent>0</persistent>
+  <maskName>&lt;undefined&gt;</maskName>
+  <parentName>&lt;undefined&gt;</parentName>
+  <events>
+    <event enumb="0" eventtype="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <useapplyto>-1</useapplyto>
+        <isquestion>0</isquestion>
+        <exetype>2</exetype>
+        <functionname/>
+        <codestring/>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>io_clear();&#13;
+io_handle();</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event enumb="0" eventtype="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <useapplyto>-1</useapplyto>
+        <isquestion>0</isquestion>
+        <exetype>2</exetype>
+        <functionname/>
+        <codestring/>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (global.bdeathcene==true)&#13;
+{&#13;
+	if ( keyboard_check_pressed(global.key_accept))&#13;
+		room = rm_menu;&#13;
+		&#13;
+	return 0;&#13;
+}&#13;
+&#13;
+if ( keyboard_check_pressed(global.key_back) )&#13;
+{&#13;
+	//room = rm_menu;&#13;
+}</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event enumb="4" eventtype="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <useapplyto>-1</useapplyto>
+        <isquestion>0</isquestion>
+        <exetype>2</exetype>
+        <functionname/>
+        <codestring/>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>w = 320/16;&#13;
+h = (240/16) - 2;&#13;
+&#13;
+// reset total rocks that are water hazards to 0&#13;
+global.level_waterrocks = 0;&#13;
+global.level_nugs_found = 0;&#13;
+global.level_crys_found = 0;&#13;
+&#13;
+// create return door and set player position&#13;
+instance_create(0,32, obj_doorhome);&#13;
+global.oplayer.x = 16;&#13;
+global.oplayer.y = 32;&#13;
+&#13;
+for(y = 2; y &lt; h; ++y)&#13;
+	for(x = 0; x &lt; w; ++x)&#13;
+	{&#13;
+		// skip top-left object for player.&#13;
+		if(x==0&amp;&amp;y==2)&#13;
+			continue;&#13;
+		if(x==1&amp;&amp;y==2)&#13;
+			continue;&#13;
+		// skip bot-right object for door		&#13;
+		if (x==w-1 &amp;&amp; y==h-1)&#13;
+			global.level_odoorexit = instance_create(x*16,y*16, obj_doorexit);&#13;
+		else&#13;
+		{&#13;
+			nrock = instance_create(x*16, y*16, obj_rock);&#13;
+			waterchance = irandom(global.level_waterchance_mod - global.level);&#13;
+			if (waterchance==1) &#13;
+			{&#13;
+				nrock.owater = instance_create(x*16, y*16, obj_water_trickle);&#13;
+				global.level_waterrocks++;&#13;
+			}&#13;
+			else&#13;
+				nrock.owater = noone;&#13;
+			global.level_rocks_left++;&#13;
+		}&#13;
+	}&#13;
+		&#13;
+global.level_nugs_total = global.level + 2 + irandom(global.level * 1.5);&#13;
+global.level_crys_total = global.level + 2 + irandom(global.level * 1.5);</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event enumb="64" eventtype="8">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <useapplyto>-1</useapplyto>
+        <isquestion>0</isquestion>
+        <exetype>2</exetype>
+        <functionname/>
+        <codestring/>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>display_set_gui_size(320,240); // has to be called per GUI draw event&#13;
+&#13;
+draw_set_font(font_0);&#13;
+&#13;
+draw_sprite(spr_nugget, 0, 320-64, 6);&#13;
+draw_sprite(spr_crystal, 1, 320-96-32, 6);&#13;
+&#13;
+//draw_set_color( make_color_rgb(255,255,255) );&#13;
+draw_text(320-96-48-16, 6,"L " + string(global.level));&#13;
+draw_text(320-64+32, 6, string(global.level_nugs_found)+"/"+string(global.level_nugs_total));&#13;
+draw_text(320-96, 6, string(global.level_crys_found) + "/"+string(global.level_crys_total));&#13;
+&#13;
+if(global.bdeathscene) &#13;
+{&#13;
+	draw_set_halign(fa_center);&#13;
+	draw_set_valign(fa_middle);&#13;
+	draw_set_font(font_1);&#13;
+	draw_set_color(c_black);&#13;
+	draw_text(160-2,120-2,"GAME OVER");&#13;
+	draw_text(160-2,120,"GAME OVER");&#13;
+	draw_text(160,120-2,"GAME OVER");&#13;
+	draw_text(160+2,120+2,"GAME OVER");&#13;
+	draw_text(160+2,120,"GAME OVER");&#13;
+	draw_text(160,120+2,"GAME OVER");&#13;
+	draw_set_color(c_red);	&#13;
+	draw_text(160,120,"GAME OVER");&#13;
+	draw_set_valign(fa_top);&#13;
+	draw_set_valign(fa_left);&#13;
+}&#13;
+&#13;
+/*&#13;
+if ( keyboard_check_released(global.key_back) )&#13;
+	draw_text(0,16,"esc");&#13;
+if ( keyboard_check_released(global.key_accept) )	&#13;
+	draw_text(0,24,"enter"); &#13;
+*/</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+  </events>
+  <PhysicsObject>0</PhysicsObject>
+  <PhysicsObjectSensor>0</PhysicsObjectSensor>
+  <PhysicsObjectShape>0</PhysicsObjectShape>
+  <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
+  <PhysicsObjectRestitution>0.1</PhysicsObjectRestitution>
+  <PhysicsObjectGroup>0</PhysicsObjectGroup>
+  <PhysicsObjectLinearDamping>0.1</PhysicsObjectLinearDamping>
+  <PhysicsObjectAngularDamping>0.1</PhysicsObjectAngularDamping>
+  <PhysicsObjectFriction>0.2</PhysicsObjectFriction>
+  <PhysicsObjectAwake>-1</PhysicsObjectAwake>
+  <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
+  <PhysicsShapePoints/>
+</object>

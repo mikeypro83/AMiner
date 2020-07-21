@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<object>
+  <spriteName>spr_rocks</spriteName>
+  <solid>-1</solid>
+  <visible>-1</visible>
+  <depth>0</depth>
+  <persistent>0</persistent>
+  <maskName>&lt;undefined&gt;</maskName>
+  <parentName>&lt;undefined&gt;</parentName>
+  <events>
+    <event enumb="0" eventtype="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <useapplyto>-1</useapplyto>
+        <isquestion>0</isquestion>
+        <exetype>2</exetype>
+        <functionname/>
+        <codestring/>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>owater = noone;</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event enumb="0" eventtype="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <useapplyto>-1</useapplyto>
+        <isquestion>0</isquestion>
+        <exetype>2</exetype>
+        <functionname/>
+        <codestring/>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (owater!=noone)&#13;
+{&#13;
+	instance_create(x,y,obj_water);&#13;
+	instance_destroy(self.owater);&#13;
+	return 0; // do not drop nuggets or crystals here!&#13;
+}&#13;
+&#13;
+chance = 0;&#13;
+// plenty of rocks left, spawn whatever, or nothing.&#13;
+if (global.level_rocks_left - global.level_waterrocks &gt; ( (global.level_nugs_total-global.level_nugs_found) + (global.level_crys_total-global.level_crys_found) ) )&#13;
+{&#13;
+	chance = irandom(20);&#13;
+	switch(chance)&#13;
+	{&#13;
+		case 0: &#13;
+		{&#13;
+			if (global.level_nugs_found &lt; global.level_nugs_total)&#13;
+				instance_create(x,y,obj_nugget);&#13;
+			break;&#13;
+		}&#13;
+		case 1:&#13;
+		{&#13;
+			if (global.level_crys_found &lt; global.level_crys_total)&#13;
+				instance_create(x,y,obj_crystal);			&#13;
+			break;&#13;
+		}&#13;
+		case 7:&#13;
+			// monster!&#13;
+			break;&#13;
+		case 8:&#13;
+			// monster!!&#13;
+			break;&#13;
+		case 9:&#13;
+			// monster!&#13;
+			break;&#13;
+		default:&#13;
+			break;&#13;
+	}&#13;
+	&#13;
+}&#13;
+else // not enough rocks are left, MUST spawn a nugget or crystal so level can be finished&#13;
+{&#13;
+	chance = irandom(2);&#13;
+	switch(chance)&#13;
+	{&#13;
+		case 0:&#13;
+			instance_create(x,y,obj_nugget);&#13;
+			break;&#13;
+		default:&#13;
+			instance_create(x,y,obj_crystal);&#13;
+			break;&#13;
+	}&#13;
+}&#13;
+&#13;
+global.level_rocks_left--;</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+  </events>
+  <PhysicsObject>0</PhysicsObject>
+  <PhysicsObjectSensor>0</PhysicsObjectSensor>
+  <PhysicsObjectShape>0</PhysicsObjectShape>
+  <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
+  <PhysicsObjectRestitution>0.1</PhysicsObjectRestitution>
+  <PhysicsObjectGroup>0</PhysicsObjectGroup>
+  <PhysicsObjectLinearDamping>0.1</PhysicsObjectLinearDamping>
+  <PhysicsObjectAngularDamping>0.1</PhysicsObjectAngularDamping>
+  <PhysicsObjectFriction>0.2</PhysicsObjectFriction>
+  <PhysicsObjectAwake>-1</PhysicsObjectAwake>
+  <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
+  <PhysicsShapePoints/>
+</object>
