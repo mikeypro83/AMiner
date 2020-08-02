@@ -53,8 +53,7 @@ io_handle();</string>
 	if ( keyboard_check_released(global.key_accept) )&#13;
 	{&#13;
 		room = rm_menu;	&#13;
-		instance_destroy(global.oplayer);&#13;
-		global.oplayer = noone;&#13;
+		global.oplayer.visible = false;&#13;
 	}&#13;
 	&#13;
 	return 0;&#13;

@@ -28,6 +28,10 @@
             <string>if(self.perform_accept==true)&#13;
 {&#13;
 	room = rm_house;&#13;
+	global.oplayer.image_speed = 0;&#13;
+	global.oplayer.maxhp = 3;&#13;
+	global.oplayer.hp = global.oplayer.maxhp;&#13;
+	global.oplayer.bonwater = false;&#13;
 	global.oplayer.x = 64;&#13;
 	global.oplayer.y = 112;&#13;
 	global.oplayer.visible = true;&#13;

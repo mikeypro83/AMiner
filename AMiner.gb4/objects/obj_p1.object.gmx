@@ -189,8 +189,7 @@ global.oplayer.bonwater = false;</string>
           <argument>
             <kind>1</kind>
             <string>// let the player object know it's on a water object, avoids a collision check&#13;
-global.oplayer.bonwater = true;&#13;
-</string>
+global.oplayer.bonwater = true;</string>
           </argument>
         </arguments>
       </action>
