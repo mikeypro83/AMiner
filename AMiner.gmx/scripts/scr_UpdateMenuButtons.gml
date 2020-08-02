@@ -3,8 +3,8 @@ if (global.menu_button != noone)
 	if( keyboard_check_pressed(global.key_down) ||
 		keyboard_check_pressed(global.key_right) ||
 		( (global.gp_device > -1) && (
-		joystick_check_button(global.gp_device, global.gp_down) ||
-		joystick_check_button(global.gp_device, global.gp_right) ) )
+		gamepad_button_check(global.gp_device, global.gp_down) ||
+		gamepad_button_check(global.gp_device, global.gp_right) ) )
 		)
 	{
 		global.menu_button.image_blend = make_color_rgb(128,128,128);	
@@ -16,8 +16,8 @@ if (global.menu_button != noone)
 	if( keyboard_check_pressed(global.key_up) ||
 		keyboard_check_pressed(global.key_left) ||
 		( (global.gp_device > -1) && (
-		joystick_check_button(global.gp_device, global.gp_up) ||
-		joystick_check_button(global.gp_device, global.gp_left) ) )
+		gamepad_button_check(global.gp_device, global.gp_up) ||
+		gamepad_button_check(global.gp_device, global.gp_left) ) )
 		)
 	{
 		global.menu_button.image_blend = make_color_rgb(128,128,128);

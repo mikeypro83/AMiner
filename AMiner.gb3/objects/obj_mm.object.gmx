@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<object>
+  <spriteName>&lt;undefined&gt;</spriteName>
+  <solid>0</solid>
+  <visible>-1</visible>
+  <depth>0</depth>
+  <persistent>0</persistent>
+  <maskName>&lt;undefined&gt;</maskName>
+  <parentName>&lt;undefined&gt;</parentName>
+  <events>
+    <event enumb="0" eventtype="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <useapplyto>-1</useapplyto>
+        <isquestion>0</isquestion>
+        <exetype>2</exetype>
+        <functionname/>
+        <codestring/>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>io_clear();&#13;
+io_handle();&#13;
+&#13;
+if(global.globals_init!=true)&#13;
+	scr_Globals();&#13;
+	&#13;
+// create menu&#13;
+global.mm_start_btn = instance_create(112,96, obj_mm_start_btn);&#13;
+global.mm_exit_btn = instance_create(112,144, obj_mm_exit_btn);&#13;
+global.mm_start_btn.oprevbtn = global.mm_exit_btn;&#13;
+global.mm_start_btn.onextbtn = global.mm_exit_btn;&#13;
+global.mm_exit_btn.oprevbtn = global.mm_start_btn;&#13;
+global.mm_exit_btn.onextbtn = global.mm_start_btn;&#13;
+global.menu_button = global.mm_start_btn;&#13;
+global.menu_button.image_blend = make_color_rgb(255,255,255);</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event enumb="0" eventtype="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <useapplyto>-1</useapplyto>
+        <isquestion>0</isquestion>
+        <exetype>2</exetype>
+        <functionname/>
+        <codestring/>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Update Main Menu&#13;
+scr_UpdateMenuButtons();</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>612</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <useapplyto>-1</useapplyto>
+        <isquestion>-1</isquestion>
+        <exetype>1</exetype>
+        <functionname>action_if_variable</functionname>
+        <codestring/>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>global.ExitGame</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>true</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>332</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <useapplyto>0</useapplyto>
+        <isquestion>0</isquestion>
+        <exetype>1</exetype>
+        <functionname>action_end_game</functionname>
+        <codestring/>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments/>
+      </action>
+    </event>
+    <event enumb="64" eventtype="8">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <useapplyto>-1</useapplyto>
+        <isquestion>0</isquestion>
+        <exetype>2</exetype>
+        <functionname/>
+        <codestring/>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>display_set_gui_size(320,240); // has to be called per draw gui event&#13;
+draw_set_font(font_0);&#13;
+draw_set_color(make_color_rgb(255,255,255));&#13;
+draw_text(10,10,global.menu_button);&#13;
+draw_text(10,20,string(global.menu_button.perform_accept));</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+  </events>
+  <PhysicsObject>0</PhysicsObject>
+  <PhysicsObjectSensor>0</PhysicsObjectSensor>
+  <PhysicsObjectShape>0</PhysicsObjectShape>
+  <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
+  <PhysicsObjectRestitution>0.1</PhysicsObjectRestitution>
+  <PhysicsObjectGroup>0</PhysicsObjectGroup>
+  <PhysicsObjectLinearDamping>0.1</PhysicsObjectLinearDamping>
+  <PhysicsObjectAngularDamping>0.1</PhysicsObjectAngularDamping>
+  <PhysicsObjectFriction>0.2</PhysicsObjectFriction>
+  <PhysicsObjectAwake>-1</PhysicsObjectAwake>
+  <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
+  <PhysicsShapePoints/>
+</object>

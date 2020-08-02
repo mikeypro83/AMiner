@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<object>
+  <spriteName>spr_water</spriteName>
+  <solid>0</solid>
+  <visible>-1</visible>
+  <depth>0</depth>
+  <persistent>0</persistent>
+  <maskName>&lt;undefined&gt;</maskName>
+  <parentName>&lt;undefined&gt;</parentName>
+  <events>
+    <event enumb="0" eventtype="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <useapplyto>-1</useapplyto>
+        <isquestion>0</isquestion>
+        <exetype>2</exetype>
+        <functionname/>
+        <codestring/>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>image_speed = random(0.05)+0.01;&#13;
+clonesteps = 0;&#13;
+clonedelay = 40;&#13;
+hurtp1delay = 40;&#13;
+hurtp1count = 0;&#13;
+bhurtplayer = false;</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event enumb="0" eventtype="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <useapplyto>-1</useapplyto>
+        <isquestion>0</isquestion>
+        <exetype>2</exetype>
+        <functionname/>
+        <codestring/>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/*&#13;
+	Cloning:&#13;
+		Water will clone itself every X amount of steps in any direction&#13;
+		that doesn't already have a solid object instance in the way.&#13;
+		&#13;
+	NOTE: That means that water wont *EAT* nuggets, crystals or spill over&#13;
+		players, but players can still run into water and get hurt by it.&#13;
+*/&#13;
+clonesteps++;&#13;
+if(clonesteps &gt;= clonedelay)&#13;
+{&#13;
+	//globalvar global.mine_topy = 16 * 2;&#13;
+	//globalvar global.mine_boty = 240 - (global.mine_topy);&#13;
+	{&#13;
+		clonesteps = 0;&#13;
+		if(instance_position(x+sprite_width+1, y, all)==noone) {&#13;
+			if(x+sprite_width &lt; room_width)&#13;
+				instance_create(x+sprite_width, y, obj_water); }&#13;
+				&#13;
+		if(instance_position(x-1, y, all)==noone) {&#13;
+			if(x-sprite_width &gt;= 0)&#13;
+				instance_create(x-sprite_width, y, obj_water); }&#13;
+				&#13;
+		if(instance_position(x, y-1, all)==noone){&#13;
+			if(y-sprite_height &gt;= global.mine_topy)&#13;
+				instance_create(x, y-sprite_height, obj_water); }&#13;
+				&#13;
+		if(instance_position(x, y+sprite_height+1, all)==noone) {&#13;
+			if(y+sprite_height &lt; global.mine_boty)&#13;
+				instance_create(x, y+sprite_height, obj_water);	}					&#13;
+	}&#13;
+}&#13;
+&#13;
+/*&#13;
+	If a player occupies the same location as this water object,&#13;
+	then every X amount of steps do damage to the player.&#13;
+*/&#13;
+hurtp1count++;&#13;
+bhurtplayer = (hurtp1count==hurtp1delay);&#13;
+if(hurtp1count &gt;= hurtp1delay)&#13;
+	hurtp1count = 0;&#13;
+	&#13;
+if(bhurtplayer)&#13;
+{&#13;
+	if ( (self.x == global.oplayer.x) &amp;&amp; (self.y == global.oplayer.y) )&#13;
+		if (global.oplayer.hp &gt; 0) &#13;
+			global.oplayer.hp--;&#13;
+}</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+  </events>
+  <PhysicsObject>0</PhysicsObject>
+  <PhysicsObjectSensor>0</PhysicsObjectSensor>
+  <PhysicsObjectShape>0</PhysicsObjectShape>
+  <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
+  <PhysicsObjectRestitution>0.1</PhysicsObjectRestitution>
+  <PhysicsObjectGroup>0</PhysicsObjectGroup>
+  <PhysicsObjectLinearDamping>0.1</PhysicsObjectLinearDamping>
+  <PhysicsObjectAngularDamping>0.1</PhysicsObjectAngularDamping>
+  <PhysicsObjectFriction>0.2</PhysicsObjectFriction>
+  <PhysicsObjectAwake>-1</PhysicsObjectAwake>
+  <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
+  <PhysicsShapePoints/>
+</object>

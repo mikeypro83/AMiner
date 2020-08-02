@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<font>
+  <name>Ubuntu Mono</name>
+  <size>8</size>
+  <bold>0</bold>
+  <italic>0</italic>
+  <charset>0</charset>
+  <aa>2</aa>
+  <ranges>
+    <range0>32,127</range0>
+    <range0>10,10</range0>
+    <range0>32,91</range0>
+    <range0>93,126</range0>
+    <range0>10,10</range0>
+    <range0>32,91</range0>
+    <range0>93,126</range0>
+  </ranges>
+  <glyphs/>
+  <image>font_0.png</image>
+</font>
