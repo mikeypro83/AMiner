@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <sprite>
-  <xorig>0</xorig>
-  <yorigin>0</yorigin>
+  <xorig>40</xorig>
+  <yorigin>16</yorigin>
   <colkind>1</colkind>
   <sepmasks>0</sepmasks>
   <bbox_left>0</bbox_left>

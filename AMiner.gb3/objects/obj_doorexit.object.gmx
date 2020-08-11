@@ -80,6 +80,8 @@ if (global.level_nugs_found&gt;=global.level_nugs_total &amp;&amp; global.level_
             <string>/// If Unlocked, advance to next level&#13;
 if (locked==false)&#13;
 {&#13;
+	global.player_nuggets += global.level_nugs_found;&#13;
+	global.player_crystals += global.level_crys_found;&#13;
 	// go to next level&#13;
 	room_restart();&#13;
 	global.level++;&#13;

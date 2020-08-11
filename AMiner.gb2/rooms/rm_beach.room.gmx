@@ -25,7 +25,7 @@
     <showViews>0</showViews>
     <deleteUnderlyingObj>0</deleteUnderlyingObj>
     <deleteUnderlyingTiles>-1</deleteUnderlyingTiles>
-    <page>2</page>
+    <page>0</page>
     <xoffset>0</xoffset>
     <yoffset>0</yoffset>
   </makerSettings>
@@ -117,6 +117,7 @@
     <instance code="" colour="4294967295" id="100259" locked="0" name="inst_8787C016" objName="obj_blockall" rotation="0.0" scaleX="1.0" scaleY="1.0" x="240" y="144"/>
     <instance code="" colour="4294967295" id="100260" locked="0" name="inst_326ED981" objName="obj_blockall" rotation="0.0" scaleX="1.0" scaleY="1.0" x="256" y="160"/>
     <instance code="" colour="4294967295" id="100869" locked="0" name="inst_965082F5" objName="obj_beach" rotation="0.0" scaleX="1.0" scaleY="1.0" x="0" y="0"/>
+    <instance code="" colour="4294967295" id="101712" locked="0" name="inst_44F8FE37" objName="obj_world_GUI" rotation="0.0" scaleX="1.0" scaleY="1.0" x="304" y="0"/>
   </instances>
   <tiles>
     <tile bgName="bkg_tileset0" colour="4294967295" depth="10" h="16" id="10001201" locked="0" name="tile_44E340E3" scaleX="1.0" scaleY="1.0" w="16" x="0" xo="16" y="32" yo="0"/>

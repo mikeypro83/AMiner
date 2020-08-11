@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// init button state&#13;
+            <string>/// PARENT OBJ - Init button state &amp; vars&#13;
 // set color to full white&#13;
 image_blend = make_color_rgb(128,128,128);&#13;
 //buttons act like a linked-list&#13;

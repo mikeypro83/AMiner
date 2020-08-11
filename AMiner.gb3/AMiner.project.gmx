@@ -15,6 +15,7 @@
       <sprite>sprites\spr_win</sprite>
       <sprite>sprites\spr_exit</sprite>
       <sprite>sprites\spr_start</sprite>
+      <sprite>sprites\spr_setup</sprite>
     </sprites>
     <sprite>sprites\spr_water_trickle</sprite>
     <sprite>sprites\spr_water</sprite>
@@ -23,15 +24,18 @@
     <sprite>sprites\sp_wall_brickB</sprite>
     <sprite>sprites\spr_blockall</sprite>
     <sprite>sprites\spr_bed</sprite>
+    <sprite>sprites\spr_title</sprite>
+    <sprite>sprites\spr_sign</sprite>
+    <sprite>sprites\spr_desk</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tileset0</background>
   </backgrounds>
   <scripts name="scripts">
     <script>scripts\scr_Globals.gml</script>
-    <script>scripts\scr_window.gml</script>
+    <script>scripts\scr_DrawWin.gml</script>
     <script>scripts\scr_UpdateMenuButtons.gml</script>
-    <script>scripts\scr_CheckInput.gml</script>
+    <script>scripts\scr_AddToMenu.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_0</font>
@@ -53,6 +57,7 @@
     <objects name="Room Controllers">
       <object>objects\obj_mine</object>
       <object>objects\obj_mm</object>
+      <object>objects\obj_setup</object>
       <object>objects\obj_entrance</object>
       <object>objects\obj_house</object>
       <object>objects\obj_beach</object>
@@ -62,12 +67,19 @@
       <objects name="MM">
         <object>objects\obj_mm_exit_btn</object>
         <object>objects\obj_mm_start_btn</object>
+        <object>objects\obj_mm_setup_btn</object>
       </objects>
+      <object>objects\obj_world_GUI</object>
     </objects>
     <object>objects\obj_bed</object>
+    <object>objects\obj_Title</object>
+    <object>objects\obj_firstsign</object>
+    <object>objects\obj_desk</object>
+    <object>objects\obj_27</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_menu</room>
+    <room>rooms\rm_setup</room>
     <room>rooms\rm_mine</room>
     <room>rooms\rm_entrance</room>
     <room>rooms\rm_house</room>

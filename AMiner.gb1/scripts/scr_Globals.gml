@@ -1,22 +1,5 @@
 /// scr_Globals
 
-// Used in scr_CheckInput
-/*
-	scr_CheckInput will check for keyboard and gamepad input, if gp_device > -1,
-	otherwise it will only check the keyboard. This makes checking input easier,
-	instead of having to check two inputs in the code, you run scr_CheckInput
-	which does it for you.
-*/
-globalvar global.in_up = 0;
-globalvar global.in_down = 1;
-globalvar global.in_left = 2;
-globalvar global.in_right = 3;
-globalvar global.in_accept = 4;
-globalvar global.in_back = 5;
-globalvar global.in_check = 0;
-globalvar global.in_pressed = 1;
-globalvar global.in_released = 2;
-
 // default gamepad controls
 globalvar global.gp_device		= -1;
 globalvar global.gp_up 			= 0;
@@ -25,7 +8,6 @@ globalvar global.gp_left 		= 0;
 globalvar global.gp_right 		= 0;
 globalvar global.gp_accept 		= 0;
 globalvar global.gp_back 		= 0;
-
 
 // default keyboard controls
 globalvar global.key_up 		= vk_up;
@@ -54,6 +36,8 @@ globalvar global.menu_button = noone;
 
 // gameplay 
 globalvar global.bdeathscene = false;
+globalvar global.player_nuggets = 0;			// total nuggets retrieved for a level are added if the player makes it to the exit
+globalvar global.player_crystals = 0;			// total crytals retrieved for a level are added if the player makes it to the exit
 globalvar global.total_nugs_found = 0;
 globalvar global.total_crys_found = 0;
 globalvar global.level = 1;

@@ -32,14 +32,22 @@ if(global.globals_init!=true)&#13;
 	scr_Globals();&#13;
 	&#13;
 // create menu&#13;
-global.mm_start_btn = instance_create(112,96, obj_mm_start_btn);&#13;
-global.mm_exit_btn = instance_create(112,144, obj_mm_exit_btn);&#13;
+global.mm_start_btn = instance_create(160,128, obj_mm_start_btn);&#13;
+global.mm_setup_btn = instance_create(160, 176, obj_mm_setup_btn);&#13;
+global.mm_exit_btn = instance_create(160,225, obj_mm_exit_btn);&#13;
 global.mm_start_btn.oprevbtn = global.mm_exit_btn;&#13;
-global.mm_start_btn.onextbtn = global.mm_exit_btn;&#13;
-global.mm_exit_btn.oprevbtn = global.mm_start_btn;&#13;
+global.mm_start_btn.onextbtn = global.mm_setup_btn;&#13;
+global.mm_setup_btn.oprevbtn = global.mm_start_btn;&#13;
+global.mm_setup_btn.onextbtn = global.mm_exit_btn;&#13;
+global.mm_exit_btn.oprevbtn = global.mm_setup_btn;&#13;
 global.mm_exit_btn.onextbtn = global.mm_start_btn;&#13;
 global.menu_button = global.mm_start_btn;&#13;
-global.menu_button.image_blend = make_color_rgb(255,255,255);</string>
+global.menu_button.image_blend = make_color_rgb(255,255,255);&#13;
+&#13;
+// some stuff for effects&#13;
+self.otitle = instance_create(160,64, obj_Title);&#13;
+self.image_xscale = 0.1;&#13;
+self.image_yscale = 0.1;</string>
           </argument>
         </arguments>
       </action>
@@ -62,7 +70,14 @@ global.menu_button.image_blend = make_color_rgb(255,255,255);</string>
           <argument>
             <kind>1</kind>
             <string>/// Update Main Menu&#13;
-scr_UpdateMenuButtons();</string>
+scr_UpdateMenuButtons();&#13;
+&#13;
+&#13;
+if(self.otitle.image_xscale &lt; 1.0) &#13;
+{&#13;
+	self.otitle.image_xscale += 0.1;&#13;
+	self.otitle.image_yscale += 0.1;&#13;
+}</string>
           </argument>
         </arguments>
       </action>
@@ -108,6 +123,29 @@ scr_UpdateMenuButtons();</string>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments/>
+      </action>
+    </event>
+    <event enumb="5" eventtype="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <useapplyto>-1</useapplyto>
+        <isquestion>0</isquestion>
+        <exetype>2</exetype>
+        <functionname/>
+        <codestring/>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>self.otitle.image_xscale = 0.1;&#13;
+self.otitle.image_yscale = 0.1;</string>
+          </argument>
+        </arguments>
       </action>
     </event>
     <event enumb="64" eventtype="8">
