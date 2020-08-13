@@ -26,6 +26,14 @@
           <argument>
             <kind>1</kind>
             <string>/// PARENT OBJ - Init button state &amp; vars&#13;
+/*&#13;
+	GUI Button Object that uses it's sprite to display. &#13;
+	Parent this object to another that has a sprite.&#13;
+*/&#13;
+&#13;
+// auto location / margins&#13;
+autoxmargin = -1;&#13;
+autoymargin = -1;&#13;
 // set color to full white&#13;
 image_blend = make_color_rgb(128,128,128);&#13;
 //buttons act like a linked-list&#13;

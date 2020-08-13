@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <object>
-  <spriteName>&lt;undefined&gt;</spriteName>
-  <solid>0</solid>
+  <spriteName>spr_sign</spriteName>
+  <solid>-1</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-2</depth>
   <persistent>0</persistent>
   <maskName>&lt;undefined&gt;</maskName>
   <parentName>&lt;undefined&gt;</parentName>
@@ -25,8 +25,16 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>win_w = 1;&#13;
-win_h = 1;</string>
+            <string>// sign text&#13;
+self.text[0] = "";&#13;
+self.textlines=1;&#13;
+// sign display window size&#13;
+self.font = font_0;&#13;
+self.win_w = 2;&#13;
+self.win_h = 2;&#13;
+self.win_spr = spr_win;&#13;
+self.win_tilesize = 16;&#13;
+self.bshowsign = false;</string>
           </argument>
         </arguments>
       </action>
@@ -48,47 +56,15 @@ win_h = 1;</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (keyboard_check_released(global.key_up))&#13;
+            <string>if(self.bshowsign==true)&#13;
 {&#13;
-	if ( win_h &gt; 1 ) win_h--;&#13;
-}&#13;
-&#13;
-if (keyboard_check_released(global.key_down))&#13;
-{&#13;
-	if ( win_h &lt; 16 ) win_h++;&#13;
-}&#13;
-&#13;
-if (keyboard_check_released(global.key_left))&#13;
-{&#13;
-	if ( win_w &gt; 1 ) win_w--;&#13;
-}&#13;
-&#13;
-if (keyboard_check_released(global.key_right))&#13;
-{&#13;
-	if ( win_w &lt; 16 ) win_w++;&#13;
+	global.bsignopen=true;&#13;
+	if(keyboard_check_released(global.key_accept))&#13;
+	{&#13;
+		self.bshowsign=false;&#13;
+		global.bsignopen=false;&#13;
+	}&#13;
 }</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event enumb="64" eventtype="8">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <useapplyto>-1</useapplyto>
-        <isquestion>0</isquestion>
-        <exetype>2</exetype>
-        <functionname/>
-        <codestring/>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>draw_text(100,100,"Im drawing");</string>
           </argument>
         </arguments>
       </action>
@@ -110,7 +86,33 @@ if (keyboard_check_released(global.key_right))&#13;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_DrawWin(spr_win, 16, 16, 16, win_w, win_h);</string>
+            <string>draw_self();&#13;
+&#13;
+if(self.bshowsign)&#13;
+{&#13;
+	len = 0;&#13;
+	_th = string_height("!HTjg)")+2;&#13;
+	for(i = 0; i &lt; self.textlines; ++i)&#13;
+	{&#13;
+		l = string_width(self.text[i]);&#13;
+		if(l &gt; len)&#13;
+			len = l;&#13;
+	}&#13;
+	self.win_w = ceil(len/self.win_tilesize)+2;&#13;
+	self.win_h = ceil((self.textlines*_th)/self.win_tilesize);&#13;
+	&#13;
+	_x = (view_wview[view_current]/2) - ((self.win_w*self.win_tilesize)/2);&#13;
+	_y = (view_hview[view_current]/2) - ((self.win_h*self.win_tilesize)/2);&#13;
+	&#13;
+	draw_set_font(self.font);&#13;
+	scr_DrawWin(self.win_spr, self.win_tilesize, _x, _y, self.win_w, self.win_h);&#13;
+	&#13;
+		for(i = 0; i &lt; self.textlines; ++i)&#13;
+		{&#13;
+			_xofs = ((self.win_w*self.win_tilesize)/2) - (string_width(self.text[i])/2);&#13;
+			draw_text(_x+_xofs, _y + (i*_th), self.text[i]);&#13;
+		}&#13;
+}</string>
           </argument>
         </arguments>
       </action>

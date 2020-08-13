@@ -25,7 +25,7 @@
     <showViews>0</showViews>
     <deleteUnderlyingObj>-1</deleteUnderlyingObj>
     <deleteUnderlyingTiles>0</deleteUnderlyingTiles>
-    <page>0</page>
+    <page>3</page>
     <xoffset>0</xoffset>
     <yoffset>0</yoffset>
   </makerSettings>
@@ -51,6 +51,7 @@
   </views>
   <instances>
     <instance code="" colour="4294967295" id="100001" locked="0" name="inst_2FFAB534" objName="obj_mm" rotation="0.0" scaleX="1.0" scaleY="1.0" x="0" y="0"/>
+    <instance code="" colour="4294967295" id="101802" locked="0" name="inst_C5855D91" objName="obj_global" rotation="0.0" scaleX="1.0" scaleY="1.0" x="32" y="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

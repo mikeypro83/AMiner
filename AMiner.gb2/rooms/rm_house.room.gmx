@@ -134,8 +134,8 @@
     <instance code="" colour="4294967295" id="101329" locked="0" name="inst_173217BF" objName="obj_blockall" rotation="0.0" scaleX="1.0" scaleY="1.0" x="208" y="80"/>
     <instance code="" colour="4294967295" id="101330" locked="0" name="inst_4F417E17" objName="obj_blockall" rotation="0.0" scaleX="1.0" scaleY="1.0" x="224" y="80"/>
     <instance code="" colour="4294967295" id="101560" locked="0" name="inst_22B682C4" objName="obj_world_GUI" rotation="0.0" scaleX="1.0" scaleY="1.0" x="304" y="0"/>
-    <instance code="" colour="4294967295" id="101797" locked="0" name="inst_27A4E6C2" objName="obj_firstsign" rotation="0.0" scaleX="1.0" scaleY="1.0" x="112" y="112"/>
     <instance code="" colour="4294967295" id="101798" locked="0" name="inst_F20A02E5" objName="obj_desk" rotation="0.0" scaleX="1.0" scaleY="1.0" x="192" y="112"/>
+    <instance code="" colour="4294967295" id="101895" locked="0" name="inst_C33735B6" objName="obj_firstsign" rotation="0.0" scaleX="1.0" scaleY="1.0" x="96" y="112"/>
   </instances>
   <tiles>
     <tile bgName="bkg_tileset0" colour="4294967295" depth="10" h="16" id="10000811" locked="0" name="tile_44E340E3" scaleX="1.0" scaleY="1.0" w="16" x="0" xo="16" y="32" yo="0"/>

@@ -54,6 +54,8 @@ io_handle();</string>
 	{&#13;
 		room = rm_menu;	&#13;
 		global.oplayer.visible = false;&#13;
+		global.player_nuggets = 0;	&#13;
+		global.player_crystals = 0;			&#13;
 	}&#13;
 	&#13;
 	return 0;&#13;

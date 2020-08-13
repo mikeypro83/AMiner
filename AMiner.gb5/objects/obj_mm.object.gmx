@@ -46,8 +46,8 @@ global.menu_button.image_blend = make_color_rgb(255,255,255);&#13;
 &#13;
 // some stuff for effects&#13;
 self.otitle = instance_create(160,64, obj_Title);&#13;
-self.image_xscale = 0.1;&#13;
-self.image_yscale = 0.1;</string>
+self.otitle.image_xscale = 0.1;&#13;
+self.otitle.image_yscale = 0.1;</string>
           </argument>
         </arguments>
       </action>
@@ -169,7 +169,10 @@ self.otitle.image_yscale = 0.1;</string>
 draw_set_font(font_0);&#13;
 draw_set_color(make_color_rgb(255,255,255));&#13;
 draw_text(10,10,global.menu_button);&#13;
-draw_text(10,20,string(global.menu_button.perform_accept));</string>
+draw_text(10,20,string(global.menu_button.perform_accept));&#13;
+&#13;
+xx = string_width("Test");&#13;
+draw_text(1,1,string(xx));</string>
           </argument>
         </arguments>
       </action>

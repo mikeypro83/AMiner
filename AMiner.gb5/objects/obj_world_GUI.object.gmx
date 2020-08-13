@@ -32,7 +32,7 @@ draw_set_font(font_0);&#13;
 draw_sprite(spr_nugget, 0, 320-64, 6);&#13;
 draw_sprite(spr_crystal, 1, 320-96-32, 6);&#13;
 &#13;
-//draw_set_color( make_color_rgb(255,255,255) );&#13;
+draw_set_color( make_color_rgb(255,255,255) );&#13;
 draw_text(320-96-48-16, 6,"L " + string(global.level));&#13;
 draw_text(320-64+32, 6, string(global.player_nuggets) );&#13;
 draw_text(320-96, 6, string(global.player_crystals) );</string>

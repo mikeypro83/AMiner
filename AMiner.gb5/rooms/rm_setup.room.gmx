@@ -50,7 +50,8 @@
     <view hborder="32" hport="480" hspeed="-1" hview="480" objName="&lt;undefined&gt;" vborder="32" visible="0" vspeed="-1" wport="640" wview="640" xport="0" xview="0" yport="0" yview="0"/>
   </views>
   <instances>
-    <instance code="" colour="4294967295" id="101800" locked="0" name="inst_BCA8B710" objName="obj_27" rotation="0.0" scaleX="1.0" scaleY="1.0" x="112" y="96"/>
+    <instance code="" colour="4294967295" id="101800" locked="0" name="inst_BCA8B710" objName="obj_TESTTHING" rotation="0.0" scaleX="1.0" scaleY="1.0" x="0" y="0"/>
+    <instance code="" colour="4294967295" id="101806" locked="0" name="inst_8E8CDBCF" objName="obj_setup" rotation="0.0" scaleX="1.0" scaleY="1.0" x="32" y="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

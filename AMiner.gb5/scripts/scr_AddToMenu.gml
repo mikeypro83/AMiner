@@ -1,30 +1,28 @@
 /// Add a button to a linked list menu or start a new menu list
-//addtomenu(button, prevbutton, nextbutton, x, y, autoxmargin, autoymargin, isDefault)
+// scr_AddToMenu(x, y, buttontype, prevbutton, nextbutton, autoxmargin, autoymargin, isDefault)
 {
-	button = argument0;
-	prevbutton = argument1;
-	nextbutton = argument2;
-	button.x = argument3;
-	button.y = argument4;
- 	button.autoxmargin = argument5; // how much to space from previous button x axis
- 	button.autoymargin = argument6; // how much to space from previous button y axis
- 	global.menu_button = (argument7) == true ? button : global.menu_button;
-	button.oprevbtn = prevbutton;
-	button.onextbtn = nextbutton;
-	
-	if(prevbutton != noone)
+	atm_buttontype = argument0;
+	atm_button = instance_create(argument0, argument1, argument2);
+	atm_button.oprevbtn = argument3;
+	atm_button.onextbtn = argument4;
+	atm_button.autoxmargin = argument5; // how much to space from previous button x axis
+ 	atm_button.autoymargin = argument6; // how much to space from previous button y axis
+ 	
+ 	if (argument7==true)
+ 	{
+ 		global.menu_button = atm_button;
+ 		
+ 	}
+
+	if(atm_button.oprevbtn != noone)
 	{
-		if(prevbutton.onextbtn != noone)
-			{ /* log button relationship previosly set */ }
+		atm_button.oprevbtn.onextbtn = atm_button;
 	}
 	
-	if(nextbutton != noone)
+	if(atm_button.onextbtn != noone)
 	{
-		if(nextbutton.oprevbtn != noone)
-			{ /* log  button relationship previously set */ }
+		atm_button.onextbtn.oprevbtn = atm_button;
 	}
 	
-	prevbutton.onextbtn = button;
-	nextbutton.oprevbtn = button;
-	return 0;
+	return atm_button;
 }

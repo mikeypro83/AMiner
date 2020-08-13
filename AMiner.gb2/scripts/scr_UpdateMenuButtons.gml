@@ -1,5 +1,6 @@
 if (global.menu_button != noone)
 {
+	global.menu_button.image_blend = make_color_rgb(255,255,255);
 	if( keyboard_check_pressed(global.key_down) ||
 		keyboard_check_pressed(global.key_right) ||
 		( (global.gp_device > -1) && (

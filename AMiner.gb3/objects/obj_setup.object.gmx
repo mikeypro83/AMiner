@@ -28,16 +28,23 @@
             <string>io_clear();&#13;
 io_handle();&#13;
 &#13;
-if(global.globals_init!=true)&#13;
-	scr_Globals();&#13;
-	&#13;
-// create menu&#13;
-&#13;
-&#13;
 // some stuff for effects&#13;
 self.otitle = instance_create(160,64, obj_Title);&#13;
-self.image_xscale = 0.1;&#13;
-self.image_yscale = 0.1;</string>
+&#13;
+//scr_addToMenu(buttontype, x, y, prevbutton, nextbutton, autoxmargin, autoymargin, isDefault)&#13;
+global.setup_exit_btn = scr_AddToMenu(160, 176, obj_setup_exit_btn, noone, noone, -1, -1, true);&#13;
+global.setup_keys_btn = scr_AddToMenu(160, 120, obj_setup_keys_btn, global.setup_exit_btn, global.setup_gp_btn, -1, -1, false);&#13;
+global.setup_gp_btn = scr_AddToMenu(160, 120, obj_setup_gp_btn, global.setup_keys_btn, global.setup_exit_btn, -1, -1, false);&#13;
+global.setup_exit_btn.oprevbtn = global.setup_gp_btn;&#13;
+global.setup_exit_btn.onextbtn = global.setup_keys_btn;&#13;
+&#13;
+/*&#13;
+global.setup_exit_btn = instance_create(160, 176, obj_setup_exit_btn);&#13;
+global.setup_exit_btn.oprevbtn = global.setup_exit_btn;&#13;
+global.setup_exit_btn.onextbtn = global.setup_exit_btn;&#13;
+global.menu_button = global.setup_exit_btn;&#13;
+global.menu_button.image_blend = make_color_rgb(255,255,255);&#13;
+*/</string>
           </argument>
         </arguments>
       </action>
@@ -60,58 +67,9 @@ self.image_yscale = 0.1;</string>
           <argument>
             <kind>1</kind>
             <string>/// Update Main Menu&#13;
-scr_UpdateMenuButtons();&#13;
-&#13;
-if(self.otitle.image_xscale &lt; 1.0) &#13;
-{&#13;
-	self.otitle.image_xscale += 0.1;&#13;
-	self.otitle.image_yscale += 0.1;&#13;
-}</string>
+scr_UpdateMenuButtons();</string>
           </argument>
         </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>612</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <useapplyto>-1</useapplyto>
-        <isquestion>-1</isquestion>
-        <exetype>1</exetype>
-        <functionname>action_if_variable</functionname>
-        <codestring/>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>global.ExitGame</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>true</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>332</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <useapplyto>0</useapplyto>
-        <isquestion>0</isquestion>
-        <exetype>1</exetype>
-        <functionname>action_end_game</functionname>
-        <codestring/>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments/>
       </action>
     </event>
     <event enumb="5" eventtype="7">
@@ -131,8 +89,7 @@ if(self.otitle.image_xscale &lt; 1.0) &#13;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>self.otitle.image_xscale = 0.1;&#13;
-self.otitle.image_yscale = 0.1;</string>
+            <string/>
           </argument>
         </arguments>
       </action>

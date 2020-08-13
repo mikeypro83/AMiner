@@ -20,6 +20,9 @@ globalvar global.key_back 		= vk_esc;
 // Set this to true to trigger the game to close
 globalvar global.ExitGame = false;
 
+// OS Window Stuff
+globalvar global.game_fullscreen = false;
+
 ////////////////////////////////////////////////////////////////////////////////////////
 // LINKED-LIST STYLE BUTTON MENU
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -35,9 +38,9 @@ globalvar global.ExitGame = false;
 globalvar global.menu_button = noone;
 
 // gameplay 
-globalvar global.bdeathscene = false;
-globalvar global.player_nuggets = 0;			// total nuggets retrieved for a level are added if the player makes it to the exit
-globalvar global.player_crystals = 0;			// total crytals retrieved for a level are added if the player makes it to the exit
+globalvar global.bdeathscene = false;		// lets rooms know the player has died if true
+globalvar global.player_nuggets = 			// total nuggets retrieved for a level are added if the player makes it to the exit
+globalvar global.player_crystals = 0;		// total crytals retrieved for a level are added if the player makes it to the exit
 globalvar global.total_nugs_found = 0;
 globalvar global.total_crys_found = 0;
 globalvar global.level = 1;
@@ -55,6 +58,9 @@ globalvar global.level_odoorhome = noone;	// should be set and cleared by obj_mi
 // This reserves two sections, one above and one below the play area for stats & options
 globalvar global.mine_topy = 16 * 2;
 globalvar global.mine_boty = 240 - (global.mine_topy);
+
+// if a text sign is being displayed, don't let the player move
+globalvar global.bsignopen = false;
 
 //////////////////////////////////////////////////////////////////////////////////
 // global.oplayer: persistant player object instance

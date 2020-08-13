@@ -64,18 +64,26 @@
     </objects>
     <objects name="GUI">
       <object>objects\obj_menu_button</object>
+      <object>objects\obj_menu_button2</object>
       <objects name="MM">
         <object>objects\obj_mm_exit_btn</object>
         <object>objects\obj_mm_start_btn</object>
         <object>objects\obj_mm_setup_btn</object>
       </objects>
       <object>objects\obj_world_GUI</object>
+      <objects name="SETUP">
+        <object>objects\obj_setup_exit_btn</object>
+        <object>objects\obj_setup_keys_btn</object>
+        <object>objects\obj_setup_gp_btn</object>
+      </objects>
     </objects>
     <object>objects\obj_bed</object>
     <object>objects\obj_Title</object>
     <object>objects\obj_firstsign</object>
     <object>objects\obj_desk</object>
-    <object>objects\obj_27</object>
+    <object>objects\obj_TESTTHING</object>
+    <object>objects\obj_global</object>
+    <object>objects\obj_textsign</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_menu</room>
