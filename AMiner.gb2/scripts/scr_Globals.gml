@@ -21,7 +21,7 @@ globalvar global.key_down 		= vk_down;
 globalvar global.key_left 		= vk_left;
 globalvar global.key_right 		= vk_right;
 globalvar global.key_accept 	= vk_enter;
-globalvar global.key_back 		= vk_esc;
+globalvar global.key_back 		= vk_escape; // HAHAHAHAHAHA - long, dumb story. vk_esc
 
 /*//////////////////////////////////////////////////////////////////////////////
 	INPUT - Input Types - GamePad & Keyboard Mappings, Defaults, Setup
@@ -68,7 +68,7 @@ global.in_kb[global.in_down] = vk_down;
 global.in_kb[global.in_left] = vk_left;
 global.in_kb[global.in_right] = vk_right;
 global.in_kb[global.in_accept] = vk_enter;
-global.in_kb[global.in_back] = vk_esc;
+global.in_kb[global.in_back] = vk_escape;
 global.in_kb[global.in_fullscr] = vk_f4;
 
 ////////////////////////////////////////////////////////////////////////////////////////

@@ -2,7 +2,7 @@
 <object>
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
-  <visible>0</visible>
+  <visible>-1</visible>
   <depth>0</depth>
   <persistent>-1</persistent>
   <maskName>&lt;undefined&gt;</maskName>
@@ -55,15 +55,16 @@ global.besc = keyboard_check_pressed(vk_esc);</string>
           <argument>
             <kind>1</kind>
             <string>display_set_gui_size(320,240); // has to be called per GUI draw event&#13;
-&#13;
 draw_set_font(font_0);&#13;
-&#13;
+draw_set_color(c_white);&#13;
+	&#13;
 if (global.besc)&#13;
 {&#13;
-	&#13;
-	draw_set_color(c_white);&#13;
 	draw_text(100,1, "ESCAPE PRESSED");&#13;
-&#13;
+}&#13;
+else &#13;
+{&#13;
+	draw_text(100,1,"NADDA");&#13;
 }</string>
           </argument>
         </arguments>
