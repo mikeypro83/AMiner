@@ -59,7 +59,7 @@ self.bshowsign = false;</string>
             <string>if(self.bshowsign==true)&#13;
 {&#13;
 	global.bsignopen=true;&#13;
-	if(keyboard_check_released(global.key_accept))&#13;
+	if(keyboard_check_released(global.key_accept)||keyboard_check_released(vk_esc))&#13;
 	{&#13;
 		self.bshowsign=false;&#13;
 		global.bsignopen=false;&#13;

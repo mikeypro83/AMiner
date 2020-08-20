@@ -1,6 +1,12 @@
 /// scr_Globals
 
+// Create strings
+scr_CreateGlobalStrings();
+
+
+
 // default gamepad controls
+globalvar global.bgp_found		= false;
 globalvar global.gp_device		= -1;
 globalvar global.gp_up 			= 0;
 globalvar global.gp_down 		= 0;
@@ -16,6 +22,56 @@ globalvar global.key_left 		= vk_left;
 globalvar global.key_right 		= vk_right;
 globalvar global.key_accept 	= vk_enter;
 globalvar global.key_back 		= vk_esc;
+
+/*//////////////////////////////////////////////////////////////////////////////
+	INPUT - Input Types - GamePad & Keyboard Mappings, Defaults, Setup
+//////////////////////////////////////////////////////////////////////////////*/
+// input is handled by types of input. Input type is defined as what the program
+// expects of the input, IE. in_up would be some kind of Up command, either
+// for a player, game object, menu item, etc. Those input types are then given
+// a direct relationship to device input buttons/keys such as from a keyboard
+// or a gamepad. 
+////////////////////////////////////////////////////////////////////////////////
+
+// input types
+globalvar global.in_none 	= -1;
+globalvar global.in_any 	= 0;
+globalvar global.in_up 		= 1;
+globalvar global.in_down 	= 2;
+globalvar global.in_left 	= 3;
+globalvar global.in_right 	= 4;
+globalvar global.in_accept 	= 5;
+globalvar global.in_back 	= 6;
+globalvar global.in_fullscr = 7;
+globalvar global.in_last	= 8;
+
+/*
+	Gamepad Button To Input Type -- Default Key Mappings
+*/
+globalvar global.in_gp[global.in_none] = gp_none;
+global.in_gp[global.in_any] = gp_any;
+global.in_gp[global.in_up] = gp_padu;
+global.in_gp[global.in_down] = gp_padu;
+global.in_gp[global.in_left] = gp_padu;
+global.in_gp[global.in_right] = gp_padu;
+global.in_gp[global.in_accept] = gp_start;
+global.in_gp[global.in_back	] = gp_face2;
+global.in_gp[global.in_fullscr] = gp_none;
+
+/*
+	Keyboard Key To Input Type -- Default Key Mappings
+*/
+globalvar global.in_kb[global.in_none] = vk_none;
+global.in_kb[global.in_any] = vk_any;
+global.in_kb[global.in_up] = vk_up;
+global.in_kb[global.in_down] = vk_down;
+global.in_kb[global.in_left] = vk_left;
+global.in_kb[global.in_right] = vk_right;
+global.in_kb[global.in_accept] = vk_enter;
+global.in_kb[global.in_back] = vk_esc;
+global.in_kb[global.in_fullscr] = vk_f4;
+
+////////////////////////////////////////////////////////////////////////////////////////
 
 // Set this to true to trigger the game to close
 globalvar global.ExitGame = false;
@@ -37,7 +93,13 @@ globalvar global.game_fullscreen = false;
 ////////////////////////////////////////////////////////////////////////////////////////
 globalvar global.menu_button = noone;
 
-// gameplay 
+////////////////////////////////////////////////////////////////////////////////////////
+// Gameplay Data
+////////////////////////////////////////////////////////////////////////////////////////
+// All data that directly relates to gameplay function/statistic tracking.
+// 
+//
+////////////////////////////////////////////////////////////////////////////////////////\
 globalvar global.bdeathscene = false;		// lets rooms know the player has died if true
 globalvar global.player_nuggets = 			// total nuggets retrieved for a level are added if the player makes it to the exit
 globalvar global.player_crystals = 0;		// total crytals retrieved for a level are added if the player makes it to the exit
@@ -59,7 +121,7 @@ globalvar global.level_odoorhome = noone;	// should be set and cleared by obj_mi
 globalvar global.mine_topy = 16 * 2;
 globalvar global.mine_boty = 240 - (global.mine_topy);
 
-// if a text sign is being displayed, don't let the player move
+// if a text sign is being displayed this is set to true, when true we don't let the player move (TODO: should pause gameplay, actually)
 globalvar global.bsignopen = false;
 
 //////////////////////////////////////////////////////////////////////////////////

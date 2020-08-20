@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>event_inherited();&#13;
 self.x = 32;&#13;
-self.y = 120;&#13;
+self.y = 100;&#13;
 self.text = "EXIT";</string>
           </argument>
         </arguments>
@@ -54,8 +54,13 @@ self.text = "EXIT";</string>
 &#13;
 if(self.perform_accept==true)&#13;
 {&#13;
-	room = rm_menu;&#13;
-	self.perform_accept = false;&#13;
+	switch(room)&#13;
+	{&#13;
+		case rm_setup: room = rm_menu; break;&#13;
+		case rm_setup_keyboard: &#13;
+		case rm_setup_gamepad: room = rm_setup; break;&#13;
+		self.perform_accept = false;&#13;
+	}&#13;
 }</string>
           </argument>
         </arguments>

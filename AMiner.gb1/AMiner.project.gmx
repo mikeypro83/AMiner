@@ -36,6 +36,10 @@
     <script>scripts\scr_DrawWin.gml</script>
     <script>scripts\scr_UpdateMenuButtons.gml</script>
     <script>scripts\scr_AddToMenu.gml</script>
+    <script>scripts\scr_CreateGlobalStrings.gml</script>
+    <script>scripts\scr_DetectGamepad.gml</script>
+    <script>scripts\scr_CheckGP.gml</script>
+    <script>scripts\scr_CheckKB.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_0</font>
@@ -65,6 +69,7 @@
     <objects name="GUI">
       <object>objects\obj_menu_button</object>
       <object>objects\obj_menu_button2</object>
+      <object>objects\obj_setup_in_button</object>
       <objects name="MM">
         <object>objects\obj_mm_exit_btn</object>
         <object>objects\obj_mm_start_btn</object>
@@ -75,6 +80,12 @@
         <object>objects\obj_setup_exit_btn</object>
         <object>objects\obj_setup_keys_btn</object>
         <object>objects\obj_setup_gp_btn</object>
+        <object>objects\obj_setup_in_up</object>
+        <object>objects\obj_setup_in_down</object>
+        <object>objects\obj_setup_in_left</object>
+        <object>objects\obj_setup_in_right</object>
+        <object>objects\obj_setup_in_accept</object>
+        <object>objects\obj_setup_in_back</object>
       </objects>
     </objects>
     <object>objects\obj_bed</object>
@@ -94,6 +105,8 @@
   <rooms name="rooms">
     <room>rooms\rm_menu</room>
     <room>rooms\rm_setup</room>
+    <room>rooms\rm_setup_keyboard</room>
+    <room>rooms\rm_setup_gamepad</room>
     <room>rooms\rm_mine</room>
     <room>rooms\rm_entrance</room>
     <room>rooms\rm_house</room>

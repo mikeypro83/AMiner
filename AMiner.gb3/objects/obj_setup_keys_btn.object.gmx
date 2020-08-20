@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>event_inherited();&#13;
 self.x = 32;&#13;
-self.y = 140;&#13;
+self.y = 120;&#13;
 self.text = "KEYBOARD SETUP";</string>
           </argument>
         </arguments>
@@ -54,7 +54,7 @@ self.text = "KEYBOARD SETUP";</string>
 &#13;
 if(self.perform_accept==true)&#13;
 {&#13;
-	room = rm_menu;&#13;
+	room = rm_setup_keyboard;&#13;
 	self.perform_accept = false;&#13;
 }</string>
           </argument>

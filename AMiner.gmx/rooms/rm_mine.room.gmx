@@ -50,7 +50,7 @@
     <view hborder="32" hport="480" hspeed="-1" hview="480" objName="&lt;undefined&gt;" vborder="32" visible="0" vspeed="-1" wport="640" wview="640" xport="0" xview="0" yport="0" yview="0"/>
   </views>
   <instances>
-    <instance code="" colour="4294967295" id="100002" locked="0" name="inst_0075DAA6" objName="obj_mine" rotation="0.0" scaleX="1.0" scaleY="1.0" x="0" y="0"/>
+    <instance code="" colour="4294967295" id="100009" locked="0" name="inst_0075DAA6" objName="obj_mine" rotation="0.0" scaleX="1.0" scaleY="1.0" x="0" y="0"/>
   </instances>
   <tiles>
     <tile bgName="bkg_tileset0" colour="4294967295" depth="10" h="16" id="10000001" locked="0" name="tile_4699C737" scaleX="1.0" scaleY="1.0" w="16" x="0" xo="16" y="32" yo="32"/>

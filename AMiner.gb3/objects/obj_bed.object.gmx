@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <object>
   <spriteName>spr_bed</spriteName>
-  <solid>-1</solid>
+  <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>

@@ -30,7 +30,8 @@ self.image_speed = 0;&#13;
 self.maxhp = 3;&#13;
 self.hp = self.maxhp;&#13;
 self.bonwater = false;&#13;
-self.bwtf = false;</string>
+self.bwtf = false;&#13;
+self.bonbed = false;</string>
           </argument>
         </arguments>
       </action>
@@ -55,7 +56,7 @@ self.bwtf = false;</string>
             <string>/// Movement Input&#13;
 &#13;
 // Determine the correct player sprite to draw (dead, on a water object, etc)&#13;
-self.image_index = (self.hp&lt;=0) ? 2 : (self.bonwater ? 1 : 0);&#13;
+self.image_index = (self.hp&lt;=0) ? 2 : (self.bonwater||self.bonbed ? 1 : 0);&#13;
 &#13;
 // Relinquish player controls if the death scene is active.&#13;
 global.bdeathscene = (self.hp &lt;= 0);&#13;
@@ -88,6 +89,7 @@ if(visible) {&#13;
 						break;&#13;
 					case obj_desk:&#13;
 						break;&#13;
+					case obj_bed:&#13;
 					default:&#13;
 						y = ny;&#13;
 				}&#13;
@@ -116,7 +118,8 @@ if(visible) {&#13;
 						inst.bshowsign = true;&#13;
 						break;&#13;
 					case obj_desk:&#13;
-						break;						&#13;
+						break;	&#13;
+					case obj_bed:					&#13;
 					default:&#13;
 						y = ny;&#13;
 				}&#13;
@@ -145,7 +148,8 @@ if(visible) {&#13;
 						inst.bshowsign = true;&#13;
 						break;&#13;
 					case obj_desk:&#13;
-						break;						&#13;
+						break;		&#13;
+					case obj_bed:				&#13;
 					default:&#13;
 						x = nx;&#13;
 				}&#13;
@@ -174,7 +178,8 @@ if(visible) {&#13;
 						inst.bshowsign = true;&#13;
 						break;&#13;
 					case obj_desk:&#13;
-						break;						&#13;
+						break;	&#13;
+					case obj_bed:					&#13;
 					default:&#13;
 						x = nx;&#13;
 				}&#13;
@@ -195,7 +200,33 @@ if(room==rm_mine)&#13;
 }&#13;
 &#13;
 // update water status&#13;
-global.oplayer.bonwater = false;</string>
+global.oplayer.bonwater = false;&#13;
+&#13;
+// reset bonbed flag because lack of energy to find better way to do this.&#13;
+self.bonbed = false;</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event ename="obj_bed" eventtype="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <useapplyto>-1</useapplyto>
+        <isquestion>0</isquestion>
+        <exetype>2</exetype>
+        <functionname/>
+        <codestring/>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>sprite.image_index = 1;&#13;
+self.bonbed = true;</string>
           </argument>
         </arguments>
       </action>
