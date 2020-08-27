@@ -37,9 +37,19 @@
     <script>scripts\scr_UpdateMenuButtons.gml</script>
     <script>scripts\scr_AddToMenu.gml</script>
     <script>scripts\scr_CreateGlobalStrings.gml</script>
-    <script>scripts\scr_DetectGamepad.gml</script>
-    <script>scripts\scr_CheckGP.gml</script>
-    <script>scripts\scr_CheckKB.gml</script>
+    <scripts name="Input">
+      <script>scripts\scr_DetectGamepad.gml</script>
+      <script>scripts\scr_isgppressed.gml</script>
+      <script>scripts\scr_isgpreleased.gml</script>
+      <script>scripts\scr_isgpcheck.gml</script>
+      <script>scripts\scr_iskbpressed.gml</script>
+      <script>scripts\scr_iskbcheck.gml</script>
+      <script>scripts\scr_iskbreleased.gml</script>
+      <script>scripts\scr_isinpressed.gml</script>
+      <script>scripts\scr_isinreleased.gml</script>
+      <script>scripts\scr_isincheck.gml</script>
+      <script>scripts\scr_GetGPButton.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_0</font>
@@ -86,6 +96,8 @@
         <object>objects\obj_setup_in_right</object>
         <object>objects\obj_setup_in_accept</object>
         <object>objects\obj_setup_in_back</object>
+        <object>objects\obj_setup_nextgp</object>
+        <object>objects\obj_setup_prevgp</object>
       </objects>
     </objects>
     <object>objects\obj_bed</object>

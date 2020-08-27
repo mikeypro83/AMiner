@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <object>
-  <spriteName>spr_setup</spriteName>
+  <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
@@ -28,7 +28,8 @@
             <string>event_inherited();&#13;
 self.x = 32;&#13;
 self.y = 120;&#13;
-self.text = "KEYBOARD SETUP";</string>
+self.text = "KEYBOARD SETUP";&#13;
+self.ballowedit = false;</string>
           </argument>
         </arguments>
       </action>

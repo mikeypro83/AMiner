@@ -26,13 +26,12 @@
           <argument>
             <kind>1</kind>
             <string>/// GLOBAL FUNCTIONS, KEYS, UPDATES&#13;
-if(scr_CheckKB(global.in_fullscr))&#13;
+if(scr_isinpressed(global.in_fullscr))&#13;
 {&#13;
 	global.game_fullscreen = !global.game_fullscreen;&#13;
 	window_set_fullscreen(global.game_fullscreen);&#13;
-}&#13;
-&#13;
-global.besc = keyboard_check_pressed(vk_esc);</string>
+	io_clear();&#13;
+}</string>
           </argument>
         </arguments>
       </action>
@@ -57,15 +56,9 @@ global.besc = keyboard_check_pressed(vk_esc);</string>
             <string>display_set_gui_size(320,240); // has to be called per GUI draw event&#13;
 draw_set_font(font_0);&#13;
 draw_set_color(c_white);&#13;
-	&#13;
-if (global.besc)&#13;
-{&#13;
-	draw_text(100,1, "ESCAPE PRESSED");&#13;
-}&#13;
-else &#13;
-{&#13;
-	draw_text(100,1,"NADDA");&#13;
-}</string>
+&#13;
+draw_text(40,1, string(scr_GetGPButton()) + ", " + global.gpstr[scr_GetGPButton()]);&#13;
+	</string>
           </argument>
         </arguments>
       </action>

@@ -15,14 +15,6 @@ globalvar global.gp_right 		= 0;
 globalvar global.gp_accept 		= 0;
 globalvar global.gp_back 		= 0;
 
-// default keyboard controls
-globalvar global.key_up 		= vk_up;
-globalvar global.key_down 		= vk_down;
-globalvar global.key_left 		= vk_left;
-globalvar global.key_right 		= vk_right;
-globalvar global.key_accept 	= vk_enter;
-globalvar global.key_back 		= vk_escape; // HAHAHAHAHAHA - long story. vk_esc
-
 /*//////////////////////////////////////////////////////////////////////////////
 	INPUT - Input Types - GamePad & Keyboard Mappings, Defaults, Setup
 //////////////////////////////////////////////////////////////////////////////*/
@@ -48,15 +40,16 @@ globalvar global.in_last	= 8;
 /*
 	Gamepad Button To Input Type -- Default Key Mappings
 */
-globalvar global.in_gp[global.in_none] = gp_none;
+global.gp_none = -1;
+globalvar global.in_gp[global.in_none] = global.gp_none;
 global.in_gp[global.in_any] = gp_any;
 global.in_gp[global.in_up] = gp_padu;
-global.in_gp[global.in_down] = gp_padu;
-global.in_gp[global.in_left] = gp_padu;
-global.in_gp[global.in_right] = gp_padu;
+global.in_gp[global.in_down] = gp_padd;
+global.in_gp[global.in_left] = gp_padl;
+global.in_gp[global.in_right] = gp_padr;
 global.in_gp[global.in_accept] = gp_start;
 global.in_gp[global.in_back	] = gp_face2;
-global.in_gp[global.in_fullscr] = gp_none;
+global.in_gp[global.in_fullscr] = global.gp_select;
 
 /*
 	Keyboard Key To Input Type -- Default Key Mappings
@@ -68,8 +61,11 @@ global.in_kb[global.in_down] = vk_down;
 global.in_kb[global.in_left] = vk_left;
 global.in_kb[global.in_right] = vk_right;
 global.in_kb[global.in_accept] = vk_enter;
-global.in_kb[global.in_back] = vk_esc;
+global.in_kb[global.in_back] = vk_escape;
 global.in_kb[global.in_fullscr] = vk_f4;
+
+// Init Gamepad / Key Stuff
+scr_DetectGamepad();
 
 ////////////////////////////////////////////////////////////////////////////////////////
 

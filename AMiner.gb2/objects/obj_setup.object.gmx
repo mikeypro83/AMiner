@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>io_clear();&#13;
-io_handle();&#13;
+//io_handle();&#13;
 &#13;
 // some stuff for effects&#13;
 self.otitle = instance_create(160,64, obj_Title);&#13;
@@ -44,14 +44,16 @@ switch(room)&#13;
 	case rm_setup_keyboard:&#13;
 	case rm_setup_gamepad:&#13;
 		global.setup_exit_btn = scr_AddToMenu(160, 100, obj_setup_exit_btn, noone, noone, -1, -1, true);&#13;
-		global.setup_in_up = scr_AddToMenu(160, 120, obj_setup_in_up, global.setup_exit_btn, global.setup_in_down, -1, -1, false);&#13;
+		global.setup_prevgp = scr_AddToMenu(200,100, obj_setup_prevgp, global.setup_exit_btn, global.setup_nextgp, -1, -1, false);&#13;
+		global.setup_nextgp = scr_AddToMenu(280,100, obj_setup_nextgp, global.setup_prevgp, global.setup_in_up, -1, -1, false);&#13;
+		global.setup_in_up = scr_AddToMenu(160, 120, obj_setup_in_up, global.setup_nextgp, global.setup_in_down, -1, -1, false);&#13;
 		global.setup_in_down = scr_AddToMenu(160, 140, obj_setup_in_down, global.setup_in_up, global.setup_in_left, -1, -1, false);&#13;
 		global.setup_in_left = scr_AddToMenu(160, 160, obj_setup_in_left, global.setup_in_down, global.setup_in_right, -1, -1, false);&#13;
 		global.setup_in_right = scr_AddToMenu(160, 180, obj_setup_in_right, global.setup_in_left, global.setup_in_accept, -1, -1, false);&#13;
 		global.setup_in_accept = scr_AddToMenu(160, 200, obj_setup_in_accept, global.setup_in_right, global.setup_in_back, -1, -1, false);&#13;
 		global.setup_in_back = scr_AddToMenu(160, 220, obj_setup_in_back, global.setup_in_accept, global.setup_exit_btn, -1, -1, false);&#13;
 		global.setup_exit_btn.oprevbtn = global.setup_in_back;&#13;
-		global.setup_exit_btn.onextbtn = global.setup_in_up;	&#13;
+		global.setup_exit_btn.onextbtn = global.setup_prevgp;	&#13;
 		break;&#13;
 	default:&#13;
 		break;&#13;

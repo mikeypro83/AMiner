@@ -46,7 +46,13 @@ self.win_w = 0;&#13;
 self.win_h = 0;&#13;
 self.win_tile_size = 16;&#13;
 self.win_spr = spr_win;&#13;
-self.win_font = font0;</string>
+self.win_font = font0;&#13;
+// state of button, if 0 we do normal button operations, all other states defined&#13;
+// will allow derived buttons to check for that state and do specific operations for it.&#13;
+self.state_normal = 0;&#13;
+self.state_edit = 1;&#13;
+self.state = self.state_normal;&#13;
+self.ballowedit = false;</string>
           </argument>
         </arguments>
       </action>
@@ -102,13 +108,13 @@ if(autoxmargin)&#13;
           <argument>
             <kind>1</kind>
             <string>// Draw the window using the tiled method&#13;
-scr_DrawWin(self.win_spr, self.win_tile_size, self.x, self.y, self.win_w + 2, self.win_h);&#13;
+scr_DrawWin(self.win_spr, self.win_tile_size, self.x, self.y, self.win_w , self.win_h);&#13;
 // must set to font to get accurate numbers&#13;
 draw_set_font(self.win_font);&#13;
 // calculate the y offset position for the text (centered)&#13;
 _yofs = ((self.win_h * self.win_tile_size)/2)-(string_height(self.text)/2);&#13;
 // calculate the x offset position for the text (centered as well)&#13;
-_xx = ((self.win_tile_size*(self.win_w+2)) / 2) - (string_width(self.text)/2);&#13;
+_xx = ((self.win_tile_size*(self.win_w)) / 2) - (string_width(self.text)/2);&#13;
 draw_text(self.x+_xx,self.y + _yofs, self.text);</string>
           </argument>
         </arguments>

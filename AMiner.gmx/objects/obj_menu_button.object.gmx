@@ -40,7 +40,12 @@ image_blend = make_color_rgb(128,128,128);&#13;
 oprevbtn = noone;&#13;
 onextbtn = noone;&#13;
 // when the accept key or button is pressed for this button, this is set to true&#13;
-perform_accept = false;</string>
+perform_accept = false;&#13;
+// state of button, if 0 we do normal button operations, all other states defined&#13;
+// will allow derived buttons to check for that state and do specific operations for it.&#13;
+self.state_normal = 0;&#13;
+self.state_edit = 1;&#13;
+self.state = self.state_normal;</string>
           </argument>
         </arguments>
       </action>
