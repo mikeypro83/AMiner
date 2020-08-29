@@ -77,7 +77,7 @@ self.ballowedit = false;</string>
             <string>if(self.text != self._oldtext)&#13;
 {&#13;
 	draw_set_font(self.win_font);&#13;
-	self.win_w = ceil(string_width(self.text) / self.win_tile_size);&#13;
+	self.win_w = ceil(string_width(self.text) / self.win_tile_size)+1;&#13;
 	self.win_h = ceil(string_height(self.text) / self.win_tile_size);&#13;
 	self._oldtext = self.text;&#13;
 }&#13;

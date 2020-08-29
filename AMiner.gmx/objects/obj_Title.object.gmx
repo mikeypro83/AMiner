@@ -4,10 +4,152 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <maskName>&lt;undefined&gt;</maskName>
   <parentName>&lt;undefined&gt;</parentName>
-  <events/>
+  <events>
+    <event enumb="0" eventtype="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <useapplyto>-1</useapplyto>
+        <isquestion>0</isquestion>
+        <exetype>2</exetype>
+        <functionname/>
+        <codestring/>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>self.x = (view_wview[view_current] / 2); // title image is centered.&#13;
+self.y = 64;&#13;
+self.blah = false;</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event enumb="0" eventtype="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <useapplyto>-1</useapplyto>
+        <isquestion>0</isquestion>
+        <exetype>2</exetype>
+        <functionname/>
+        <codestring/>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>switch (room)&#13;
+{&#13;
+	case rm_menu:&#13;
+		// setup the title image&#13;
+		self.image_xscale = self.image_xscale &lt; 1.0 ? self.image_xscale + 0.1 : 1.0;&#13;
+		self.image_yscale = self.image_xscale;&#13;
+		break;&#13;
+	case rm_setup:&#13;
+		break;&#13;
+	case rm_setup_keyboard:&#13;
+		break;&#13;
+	case rm_setup_gamepad:&#13;
+		break;&#13;
+&#13;
+}</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event enumb="5" eventtype="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <useapplyto>-1</useapplyto>
+        <isquestion>0</isquestion>
+        <exetype>2</exetype>
+        <functionname/>
+        <codestring/>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>self.blah = true;&#13;
+self.image_xscale = 0.1;&#13;
+self.image_yscale = self.image_xscale;&#13;
+self.visible = false;&#13;
+		&#13;
+switch (room)&#13;
+{&#13;
+	case rm_menu:&#13;
+		// setup the title image&#13;
+		self.image_xscale = 0.1;&#13;
+		self.image_yscale = self.image_xscale;&#13;
+		self.visible = false;&#13;
+		break;&#13;
+	case rm_setup:&#13;
+		break;&#13;
+	case rm_setup_keyboard:&#13;
+		break;&#13;
+	case rm_setup_gamepad:&#13;
+		break;&#13;
+&#13;
+}</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event enumb="4" eventtype="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <useapplyto>-1</useapplyto>
+        <isquestion>0</isquestion>
+        <exetype>2</exetype>
+        <functionname/>
+        <codestring/>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>switch (room)&#13;
+{&#13;
+	case rm_menu:&#13;
+		// setup the title image&#13;
+		self.image_xscale = 0.1;&#13;
+		self.image_yscale = 0.1;&#13;
+		self.visible = true;&#13;
+		self.x = (view_wview[view_current] / 2); // image has a centered origin&#13;
+		self.y = 64;&#13;
+		break;&#13;
+	case rm_setup:&#13;
+		break;&#13;
+	case rm_setup_keyboard:&#13;
+		break;&#13;
+	case rm_setup_gamepad:&#13;
+		break;&#13;
+&#13;
+}</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+  </events>
   <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>0</PhysicsObjectShape>

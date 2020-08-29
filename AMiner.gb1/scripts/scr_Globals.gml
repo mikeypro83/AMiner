@@ -4,19 +4,8 @@
 scr_CreateGlobalStrings();
 
 
-
-// default gamepad controls
-globalvar global.bgp_found		= false;
-globalvar global.gp_device		= -1;
-globalvar global.gp_up 			= 0;
-globalvar global.gp_down 		= 0;
-globalvar global.gp_left 		= 0;
-globalvar global.gp_right 		= 0;
-globalvar global.gp_accept 		= 0;
-globalvar global.gp_back 		= 0;
-
 /*//////////////////////////////////////////////////////////////////////////////
-	INPUT - Input Types - GamePad & Keyboard Mappings, Defaults, Setup
+//	INPUT - Input Types - GamePad & Keyboard Mappings, Defaults, Setup
 //////////////////////////////////////////////////////////////////////////////*/
 // input is handled by types of input. Input type is defined as what the program
 // expects of the input, IE. in_up would be some kind of Up command, either
@@ -121,12 +110,21 @@ globalvar global.mine_boty = 240 - (global.mine_topy);
 globalvar global.bsignopen = false;
 
 //////////////////////////////////////////////////////////////////////////////////
-// global.oplayer: persistant player object instance
+//GLOBAL OBJECTS - PERSISTANT 
 //////////////////////////////////////////////////////////////////////////////////
-// this helps access the player object instance in the game whenever we want to.
+
 //////////////////////////////////////////////////////////////////////////////////
+// .otitle: title object each room can use and move around
+globalvar global.otitle = instance_create(-256,-256, obj_Title);
+global.otitle.visible = false;
+
+//////////////////////////////////////////////////////////////////////////////////
+// .oplayer: persistant player object instance
 globalvar global.oplayer = instance_create(-32,-32, obj_p1);
 global.oplayer.visible = false;
 
+//////////////////////////////////////////////////////////////////////////////////
+/// FINALIZE GLOBALS
+//////////////////////////////////////////////////////////////////////////////////
 // DO LAST
 globalvar global.globals_init = true;

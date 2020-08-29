@@ -57,7 +57,7 @@ if(scr_isinpressed(global.in_fullscr))&#13;
 draw_set_font(font_0);&#13;
 draw_set_color(c_white);&#13;
 &#13;
-draw_text(40,1, string(scr_GetGPButton()) + ", " + global.gpstr[scr_GetGPButton()]);&#13;
+draw_text(40,1, global.otitle.blah==true?"TRUE":"FALSE");&#13;
 	</string>
           </argument>
         </arguments>

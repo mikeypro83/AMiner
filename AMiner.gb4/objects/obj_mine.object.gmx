@@ -98,6 +98,7 @@ global.level_crys_found = 0;&#13;
 instance_create(0,32, obj_doorhome);&#13;
 global.oplayer.x = 16;&#13;
 global.oplayer.y = 32;&#13;
+global.oplayer.visible = true;&#13;
 &#13;
 for(y = 2; y &lt; h; ++y)&#13;
 	for(x = 0; x &lt; w; ++x)&#13;

@@ -7,7 +7,7 @@
   <vsnap>16</vsnap>
   <isometric>0</isometric>
   <speed>30</speed>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <colour>6710886</colour>
   <showcolour>-1</showcolour>
   <code>io_clear();</code>
@@ -15,8 +15,8 @@
   <clearViewBackground>0</clearViewBackground>
   <makerSettings>
     <isSet>-1</isSet>
-    <w>1029</w>
-    <h>647</h>
+    <w>1103</w>
+    <h>632</h>
     <showGrid>-1</showGrid>
     <showObjects>-1</showObjects>
     <showTiles>-1</showTiles>

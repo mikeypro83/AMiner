@@ -26,10 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>io_clear();&#13;
-//io_handle();&#13;
 &#13;
-// some stuff for effects&#13;
-self.otitle = instance_create(160,64, obj_Title);&#13;
+/*&#13;
+	Setup the menu based on which setup room the user is viewing.&#13;
+*/&#13;
 &#13;
 switch(room)&#13;
 {&#13;
@@ -57,15 +57,7 @@ switch(room)&#13;
 		break;&#13;
 	default:&#13;
 		break;&#13;
-}&#13;
-&#13;
-/*&#13;
-global.setup_exit_btn = instance_create(160, 176, obj_setup_exit_btn);&#13;
-global.setup_exit_btn.oprevbtn = global.setup_exit_btn;&#13;
-global.setup_exit_btn.onextbtn = global.setup_exit_btn;&#13;
-global.menu_button = global.setup_exit_btn;&#13;
-global.menu_button.image_blend = make_color_rgb(255,255,255);&#13;
-*/</string>
+}</string>
           </argument>
         </arguments>
       </action>
@@ -110,7 +102,8 @@ scr_UpdateMenuButtons();</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string/>
+            <string>// disable the title image&#13;
+global.otitle.visible = false;</string>
           </argument>
         </arguments>
       </action>
