@@ -26,8 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();&#13;
-self.x = 32;&#13;
-self.y = 120;&#13;
+&#13;
 self.text = "KEYBOARD SETUP";&#13;
 self.ballowedit = false;</string>
           </argument>

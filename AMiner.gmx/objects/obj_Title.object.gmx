@@ -25,8 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>self.x = (view_wview[view_current] / 2); // title image is centered.&#13;
-self.y = 64;&#13;
+            <string>&#13;
 self.blah = false;</string>
           </argument>
         </arguments>
@@ -57,6 +56,11 @@ self.blah = false;</string>
 		self.image_yscale = self.image_xscale;&#13;
 		break;&#13;
 	case rm_setup:&#13;
+		if(self.visible) {&#13;
+			self.image_xscale = self.image_xscale &gt; 0.0 ? self.image_xscale - 0.1 : 0.0;&#13;
+			self.image_yscale = self.image_xscale;&#13;
+			self.visible = (self.image_xscale != 0.0);&#13;
+		}&#13;
 		break;&#13;
 	case rm_setup_keyboard:&#13;
 		break;&#13;
@@ -85,18 +89,13 @@ self.blah = false;</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>self.blah = true;&#13;
-self.image_xscale = 0.1;&#13;
-self.image_yscale = self.image_xscale;&#13;
-self.visible = false;&#13;
-		&#13;
-switch (room)&#13;
+            <string>switch (room)&#13;
 {&#13;
 	case rm_menu:&#13;
 		// setup the title image&#13;
-		self.image_xscale = 0.1;&#13;
-		self.image_yscale = self.image_xscale;&#13;
-		self.visible = false;&#13;
+		//self.image_xscale = 0.1;&#13;
+		//self.image_yscale = self.image_xscale;&#13;
+		//self.visible = false;&#13;
 		break;&#13;
 	case rm_setup:&#13;
 		break;&#13;
@@ -135,13 +134,13 @@ switch (room)&#13;
 		self.image_yscale = 0.1;&#13;
 		self.visible = true;&#13;
 		self.x = (view_wview[view_current] / 2); // image has a centered origin&#13;
-		self.y = 64;&#13;
+		self.y = 48;&#13;
 		break;&#13;
 	case rm_setup:&#13;
 		break;&#13;
 	case rm_setup_keyboard:&#13;
-		break;&#13;
 	case rm_setup_gamepad:&#13;
+&#13;
 		break;&#13;
 &#13;
 }</string>
